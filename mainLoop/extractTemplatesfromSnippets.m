@@ -67,7 +67,7 @@ for i = 1:10
 end
 
 dd = double(gather(dd));
-[U Sv V] = svdecon(dd); % the PCs are just the left singular vectors of the waveforms
+[U, Sv, V] = svdecon(dd); % the PCs are just the left singular vectors of the waveforms
 
 wPCA = gpuArray(single(U(:, 1:nPCs))); % take as many as needed
 wPCA(:,1) = - wPCA(:,1) * sign(wPCA(ops.nt0min,1));  % adjust the arbitrary sign of the first PC so its negativity is downward

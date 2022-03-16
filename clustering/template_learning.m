@@ -68,7 +68,7 @@ for j = 1:numel(ycenter)
 %     size(data)
     
     
-    ich = unique(iC(:, itemp));
+try    ich = unique(iC(:, itemp)); catch, ich = []; end
 %     ch_min = ich(1)-1;
 %     ch_max = ich(end);
     

@@ -94,8 +94,8 @@ for k = 1:ops.Nbatch
     toff = ops.nt0min + t0 + ops.NT *(k-1);
     st(1,:) = st(1,:) + toff;
     st = double(st);
-    st(5,:) = cF;
-    st(6,:) = k-1;
+try    st(5,:) = cF; end
+try    st(6,:) = k-1;end
     
     st3(nsp + [1:ns], :) = gather(st)';    
     
